@@ -5,3 +5,5 @@ It's my Unit 2 project for General Assembly.
 #### [Link to Trello Board](https://trello.com/b/t5cIjn9S/4roles)
 
 #### [Link to my homepage](http://www.alisonnicolestuart.tech)
+
+#### [Link to current deployed version](http://now.sh) coming soon!
