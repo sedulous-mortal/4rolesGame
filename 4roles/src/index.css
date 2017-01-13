@@ -1,0 +1,81 @@
+body,
+html {
+    color: white;
+    background-color: #50B;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 15px;
+}
+
+.row {
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+.header {
+    height: 10%;
+    color: limegreen;
+}
+
+.action {
+    height: 200px;
+}
+
+.liveFeed {
+    color: magenta;
+}
+
+.inventory {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 208px;
+    width: 800px;
+    background-color: #222;
+}
+
+.InventoryText {
+    width: 100%;
+    line-height: 20px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: magenta 2px solid;
+}
+
+.item {
+    height: 60px;
+    width: 60px;
+    border: white 1px solid;
+}
+
+img {
+    height: 200px;
+}
+
+.footer {
+    width: 100%;
+    border-top: magenta 2px solid;
+    justify-content: center;
+}
