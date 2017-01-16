@@ -6,4 +6,4 @@ It's my Unit 2 project for General Assembly.
 
 #### [Link to my homepage](http://www.alisonnicolestuart.tech)
 
-#### [Link to current deployed version](https://www.bitballoon.com/sites/quality-controller-andy-36735) coming soon!
+#### [Link to current deployed version](http://quality-controller-andy-36735.bitballoon.com/) coming soon!
