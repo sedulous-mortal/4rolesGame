@@ -1,0 +1,78 @@
+{
+    "assets": {
+        "combat": {
+            "imgURL": "https://s24.postimg.org/pa65glisl/combat.gif"
+        },
+        "combat_drops": {
+            "diamond": {
+                "imgURL": "https://s24.postimg.org/cxjn2gi39/diamond.png"
+            },
+            "flower": {
+                "imgURL": "https://s30.postimg.org/8trycn7z5/flower_red.png"
+            },
+            "ham": {
+                "imgURL": "https://s28.postimg.org/qd5u6x6ul/Ham_bone.png"
+            },
+            "rock": {
+                "imgURL": "https://s30.postimg.org/fmynhhnch/Rock.png"
+            },
+            "seeds": {
+                "imgURL": "https://s29.postimg.org/iyptyfwtj/seeds.png"
+            }
+        },
+        "farming": {
+            "imgURL": "https://s23.postimg.org/qcxkbq60b/farming.gif"
+        },
+        "farming_drops": {
+            "carrot": {
+                "imgURL": "https://s27.postimg.org/el62dr6s3/Carrot.png"
+            },
+            "eggplant": {
+                "imgURL": "https://s24.postimg.org/4mreia8l1/Eggplant.png"
+            },
+            "potato": {
+                "imgURL": "https://s24.postimg.org/3ks8ptt3p/potato.png"
+            },
+            "pumpkin": {
+                "imgURL": "https://s30.postimg.org/iam4n7o4x/Pumpkin.png"
+            },
+            "spinach": {
+                "imgURL": "https://s30.postimg.org/xfic2u5z5/Spinach.png"
+            },
+            "tomato": {
+                "imgURL": "https://s28.postimg.org/hi1gdu325/tomato.png"
+            }
+        },
+        "fishing": {
+            "imgURL": "https://s30.postimg.org/mb1mz8pm9/fishing.gif"
+        },
+        "fishing_drops": {
+            "guppy": {
+                "imgURL": "https://s24.postimg.org/oazr1benp/Guppy.png"
+            },
+            "salmon": {
+                "imgURL": "https://s30.postimg.org/6ie35tmrl/salmon.png"
+            },
+            "swordfish": {
+                "imgURL": "https://s23.postimg.org/6wak0llff/swordfish.png"
+            }
+        },
+        "mining": {
+            "imgURL": "https://s24.postimg.org/ys42biyjp/mining.gif"
+        },
+        "mining_drops": {
+            "arcanite": {
+                "imgURL": "https://s23.postimg.org/ez3l3svaz/arcanite.png"
+            },
+            "coal": {
+                "imgURL": "https://s27.postimg.org/48nwlr3lv/coal.png"
+            },
+            "gold": {
+                "imgURL": "https://d1hw6n3yxknhky.cloudfront.net/000491861_prevstill.jpeg"
+            },
+            "silver": {
+                "imgURL": "https://s28.postimg.org/hobr9rkgt/Silver.png"
+            }
+        }
+    }
+}
