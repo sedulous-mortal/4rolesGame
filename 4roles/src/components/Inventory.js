@@ -7,14 +7,14 @@ class Inventory extends React.Component {
             <div className = "inventory" >
                 <h4 className="InventoryText">Inventory</h4>
                 <div id = "inventory">
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
+                        <Item getSRC={this.props.getSRC}/>
                 </div>
             </div>
         );
