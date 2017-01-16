@@ -4,7 +4,7 @@ class LiveFeed extends React.Component {
     render() {
         return ( 
             <div className = "liveFeed">
-                <h4> You are currently Mining! </h4>
+                <h4>You struck gold!</h4>
             </div>
         );
     }

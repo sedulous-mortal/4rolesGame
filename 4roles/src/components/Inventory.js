@@ -7,9 +7,14 @@ class Inventory extends React.Component {
             <div className = "inventory" >
                 <h4 className="InventoryText">Inventory</h4>
                 <div id = "inventory">
-                    <div className="row">
-                    <Item />
-                    </div> 
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
+                        <Item />
                 </div>
             </div>
         );

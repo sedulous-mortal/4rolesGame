@@ -1,12 +1,24 @@
 body,
 html {
-    color: white;
-    background-color: #50B;
+    color: #CCC;
+    background-color: teal;
     font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: row nowrap;
+}
+
+body {
+    background-color: #50B;
+    border: white 1px solid;
+}
+
+.header,
+.action,
+.inventory,
+.footer {
+    border-top: #CCC 2px solid;
 }
 
 h1 {
@@ -15,6 +27,9 @@ h1 {
 
 h2 {
     font-size: 30px;
+    margin-top: 30px;
+    line-height: 40px;
+    background-color: #50B;
 }
 
 h3 {
@@ -36,15 +51,13 @@ h5 {
 
 .header {
     height: 10%;
-    color: limegreen;
-}
-
-.action {
-    height: 200px;
 }
 
 .liveFeed {
-    color: magenta;
+    height: 30px;
+    line-height: 30px;
+    color: black;
+    background-color: #2980b9;
 }
 
 .inventory {
@@ -53,29 +66,40 @@ h5 {
     align-items: center;
     height: 208px;
     width: 800px;
-    background-color: #222;
+    background-color: midnightblue;
 }
 
 .InventoryText {
     width: 100%;
-    line-height: 20px;
+    line-height: 40px;
     font-size: 20px;
     text-align: center;
-    border-bottom: magenta 2px solid;
 }
 
 .item {
     height: 60px;
     width: 60px;
-    border: white 1px solid;
+}
+
+.action {
+    height: 205px;
+    width: 100%;
+    background-color: black;
 }
 
 img {
     height: 200px;
 }
 
+.itemPic {
+    height: 56px;
+    width: 56px;
+    border: 2px solid white;
+}
+
 .footer {
+    line-height: 30px;
+    background-color: #50B;
     width: 100%;
-    border-top: magenta 2px solid;
     justify-content: center;
 }
