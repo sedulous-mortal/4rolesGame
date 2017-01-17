@@ -4,7 +4,7 @@ class LiveFeed extends React.Component {
     render() {
         return ( 
             <div className = "liveFeed">
-                <h4>You struck gold!</h4>
+                <h4>{`this.${this.props.actionType}Events[0]`}</h4>
             </div>
         );
     }
