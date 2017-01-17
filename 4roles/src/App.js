@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Action from './components/Action';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Inventory from './components/Inventory';
-import Item from './components/Item';
-import LiveFeed from './components/LiveFeed';
 import axios from 'axios';
-
-
+import Farming from './components/Farming';
+import Mining from './components/Mining';
+import Combat from './components/Combat';
+import Fishing from './components/Fishing';
+import Home from './components/Home';
+import Header from './components/Header';
+import { BrowserRouter, Match, Miss } from 'react-router';
 
 class App extends React.Component {
     constructor(){
@@ -35,17 +33,38 @@ class App extends React.Component {
     comonenetWillMount(){
         return <p>LOADING...</p>
         
-    }
+    }  
     
     render() {
         return ( 
-            <div className="App">
-                <Header />
-                <Action />
-                <LiveFeed />
-                <Inventory getSRC={this.getSRC}/>
-                <Footer />
-            </div>
+            <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Match exactly pattern="/" component={() =>
+            <Home
+              getSRC={this.getSRC}
+            />}/> 
+          <Match exactly pattern="/mining" component={() =>
+            <Mining
+              getSRC={this.getSRC}
+            />}/>
+          <Match exactly pattern="/farming" component={() =>
+            <Farming
+              getSRC={this.getSRC}
+            />}/> />
+          <Match exactly pattern="/fishing" component={() =>
+            <Fishing
+              getSRC={this.getSRC}
+            />}/>
+          <Match exactly pattern="/combat" component={() =>
+            <Combat
+              getSRC={this.getSRC}
+            />}/>
+            
+            
+        </div>
+      </BrowserRouter>
+
         );
     }
 }
