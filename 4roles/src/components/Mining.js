@@ -16,7 +16,7 @@ class Mining extends React.Component {
                 <Header />
                 <Action imgURL={this.props.imgURL}/>
                 <LiveFeed actionType='mining' events={this.props.events} count={this.props.count} countType={this.props.countType} incrementer={this.props.incrementer} />
-                <Inventory/>
+                <Inventory deleteItems={this.props.deleteItems} inventory={this.props.inventory}/>
                 <Footer />
             </div>
         )

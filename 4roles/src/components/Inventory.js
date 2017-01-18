@@ -19,6 +19,7 @@ class Inventory extends React.Component {
                         <Item getSRC={this.props.getSRC}/>
                         <Item getSRC={this.props.getSRC}/>
                         <Item getSRC={this.props.getSRC}/>
+                    <button id="delete" onClick={() => this.props.deleteItems(this.props.inventory)}>Delete Inventory</button>
                 </div>
             </div>
         );

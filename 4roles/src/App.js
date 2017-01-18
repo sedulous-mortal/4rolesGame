@@ -28,7 +28,8 @@ class App extends React.Component {
             this.getSRC = this.getSRC.bind(this);
             this.createUser = this.createUser.bind(this);
             this.incrementer = this.incrementer.bind(this);
-            this.deleteItem = this.deleteItem.bind(this);
+            this.deleteItems = this.deleteItems.bind(this);
+            this.giveItems = this.giveItems.bind(this);
 
         }
 
@@ -45,9 +46,11 @@ class App extends React.Component {
         }
     
     //deleteItem method to be called when the text in the feedList says that they lose something
-        deleteItem(item) {
+        deleteItems(item) {
             let url= 'https://rolesgame.firebaseio.com/';
-            axios.delete(`${url}users/${this.state.currentUserID}/${this.state.itemToDelete}/.json`)
+            //I cant get this section to do what I need it to
+            //so I'm using precise keys in the url to test that it works; it does.
+            axios.delete(`${url}users/${this.state.currentUserID}/inventory/.json`)
             .then((response) =>{
                 this.setState({assets: response.data});
                 console.log(this.state);
@@ -56,8 +59,9 @@ class App extends React.Component {
                 console.log(error);
             })
         }
-    giveItems(itemName){
-        let url= 'https://rolesgame.firebaseio.com/';
+        
+        giveItems(itemName){
+            let url= 'https://rolesgame.firebaseio.com/';
             axios.patch(`${url}users/${this.state.currentUserID}/${itemName}/.json`)
             .then((response) =>{
                 this.setState({users: response.data.users});
@@ -67,25 +71,15 @@ class App extends React.Component {
                 console.log(error);
             })
         }
-    
-    
-    /*if (currentFeedListText == "You got a carrot!"){
-//            //give them a carrot in inventory
-            giveItems(carrot);
-//        }
-//        else if (currentFeedListText == "A rabbit ate your carrot!"){
-//            //delete their carrot with an axios call
-//            
-//            console.log('your carrot should be deleted');
-//        }
-*/
+
+
     //createUser method to be called on click of "login" button, updates state with that user's ID 
     //which corresponds to the object id in firebase for their inventory stuff
         createUser(){
         let url= 'https://rolesgame.firebaseio.com/';
             //let id = the value of the input box after they hit button
             let id = document.getElementById('idInput').value;
-           this.setState({currentUser: id});
+           this.setState({currentUser: id, currentInventory: ['carrot']});
             axios.post(`${url}users.json`, {userName: id})
             .then((response) =>{
                 this.setState({ currentUserID: response.data.name });
@@ -94,6 +88,28 @@ class App extends React.Component {
                 console.log(error);
             })
         }
+    sendInventory(){
+        let url= 'https://rolesgame.firebaseio.com/';
+//           this.setState({currentInventory: ['carrot']});
+            axios.post(`${url}users/${this.currentUserID}.json`, {inventory: this.state.currentInventory})
+            .then((response) =>{
+                this.setState({ inventory: this.state.currentInventory });
+            })
+            .catch((error) =>{
+                console.log(error);
+            })
+    }
+    populateInventory(){
+        let url= 'https://rolesgame.firebaseio.com/';
+           this.setState({currentInventory: ['carrot']});
+            axios.get(`${url}users/${this.currentUserID}.json`)
+            .then((response) =>{
+                this.setState({currentInventory: response.inventory});
+            })
+            .catch((error) =>{
+                console.log(error);
+            })
+    }
     
         incrementer(countType, eventType) {
         const stateObject = {};
@@ -123,8 +139,17 @@ class App extends React.Component {
               miningURL = this.state.assets.mining.imgURL;
               fishingURL = this.state.assets.fishing.imgURL;
               combatURL = this.state.assets.combat.imgURL;
-            }
-            console.log(miningURL);
+//            }
+//            console.log(this.currentFeedListText)
+//            if (this.state.currentFeedListText == "You picked a carrot."){
+////            //give them a carrot in inventory
+//            this.giveItems('carrot');
+//            }
+//            else if (this.state.currentFeedListText == "A rabbit ate your carrot!"){
+////            //delete their carrot with an axios call
+//            this.setState({itemToDelete: 'carrot'});  
+//            console.log('your carrot should be deleted');
+        }
             return ( 
                 <BrowserRouter>
                     <div className="App">
@@ -134,19 +159,19 @@ class App extends React.Component {
                         
                         <Match exactly pattern = "/mining"
                         component={() =>
-                        <Mining imgURL={miningURL} count={this.state.miningCount} countType="miningCount" eventType="miningEvents" events={this.state.miningEvents} incrementer={this.incrementer}/>}/>
+                        <Mining imgURL={miningURL} count={this.state.miningCount} countType="miningCount" eventType="miningEvents" events={this.state.miningEvents} incrementer={this.incrementer} deleteItems={this.deleteItems}/>}/>
                                 
                         <Match exactly pattern = "/farming"
                         component={() =>
-                        <Farming imgURL={farmingURL} incrementer={this.incrementer} count= {this.state.farmingCount} events={this.state.farmingEvents}/>}/>
+                        <Farming imgURL={farmingURL} incrementer={this.incrementer} count= {this.state.farmingCount} deleteItems={this.deleteItems} events={this.state.farmingEvents}/>}/>
                         
                         <Match exactly pattern="/fishing"
                         component={() =>
-                        <Fishing imgURL={fishingURL} incrementer={this.incrementer} events={this.state.fishingEvents} count={this.state.fishingCount} />}/>
+                        <Fishing imgURL={fishingURL} incrementer={this.incrementer} events={this.state.fishingEvents} deleteItems={this.deleteItems} count={this.state.fishingCount} />}/>
                         
                         <Match exactly pattern="/combat"
                         component={() =>
-                        <Combat imgURL={combatURL} incrementer={this.incrementer} count={this.state.combatCount} events={this.state.combatEvents} />}/> 
+                        <Combat imgURL={combatURL} deleteItems={this.deleteItems} incrementer={this.incrementer} count={this.state.combatCount} events={this.state.combatEvents} />}/> 
                         
                     </div>
                 </BrowserRouter>

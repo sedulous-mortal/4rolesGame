@@ -15,7 +15,7 @@ class Fishing extends React.Component {
                 <Header />
                 <Action imgURL={this.props.imgURL}/>
                 <LiveFeed actionType='fishing' events={this.props.events} incrementer={this.props.incrementer} count={this.props.count}/>
-                <Inventory />
+                <Inventory deleteItems={this.props.deleteItems} inventory={this.props.inventory}/>
                 <Footer />
             </div>
         )

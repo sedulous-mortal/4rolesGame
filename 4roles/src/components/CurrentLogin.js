@@ -6,7 +6,8 @@ class CurrentLogin extends React.Component{
             return(
                 <div className="currentLogin">
             <h4>You are currently logged in as: </h4>
-            <h5>{this.props.currentUser}</h5>
+            <h3>{this.props.currentUser}</h3>
+                    <br/>
                     </div>
             );
         } else return (

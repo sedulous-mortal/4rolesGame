@@ -15,7 +15,7 @@ class Combat extends React.Component {
                 <Header />
                 <Action imgURL={this.props.imgURL}/>
                 <LiveFeed actionType='combat' incrementer={this.props.incrementer} count={this.props.count} events={this.props.events}/>
-                <Inventory/>
+                <Inventory deleteItems={this.props.deleteItems} inventory={this.props.inventory}/>
                 <Footer />
             </div>
         )
