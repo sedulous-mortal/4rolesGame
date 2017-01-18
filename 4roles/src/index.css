@@ -21,11 +21,17 @@ a{
 a:hover{
     color: white;
 }
+
 .header,
 .action,
 .inventory,
 .footer {
     border-top: #CCC 2px solid;
+}
+
+input{
+    margin: 15px;
+    line-height: 30px;
 }
 
 ul {

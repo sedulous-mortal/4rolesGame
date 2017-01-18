@@ -4,14 +4,21 @@ import Action from './Action';
 import LiveFeed from './LiveFeed';
 import Inventory from './Inventory';
 import Footer from './Footer';
+import CurrentLogin from './CurrentLogin';
 import {Link} from 'react-router';
 
-const Home = (props) => {
+class Home extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render(){
     return ( 
         <div className="App">
             <h1> Welcome to 4 Roles: the Game! </h1>
-            <button id="login">LOGIN</button>
-            <p> Select a role: </p>
+            <input id="idInput" type="text" name="login" placeholder="AlisonStuart" /> 
+            <button onClick={()=>{this.props.createUser()}} id="login">LOGIN</button>
+            <CurrentLogin currentUser={this.props.currentLogin}/>
+            <h4> Select a role: </h4>
             <ul>
                 <li><Link to="/mining"
                 activeOnlyWhenExact activeClassName="active"><img src="https://s24.postimg.org/ys42biyjp/mining.gif" alt="Mining"/>Mining</Link></li>
@@ -27,5 +34,6 @@ const Home = (props) => {
                 <Footer />
         </div>
         )
+    }
 }
 export default Home;

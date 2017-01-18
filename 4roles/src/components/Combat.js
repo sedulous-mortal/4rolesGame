@@ -5,15 +5,20 @@ import LiveFeed from './LiveFeed';
 import Inventory from './Inventory';
 import Footer from './Footer';
 
-const Combat = () => {
+class Combat extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render(){
     return ( 
         <div className="App">
                 <Header />
-                <Action />
-                <LiveFeed actionType='combat'/>
+                <Action imgURL={this.props.imgURL}/>
+                <LiveFeed actionType='combat' incrementer={this.props.incrementer} events={this.props.events}/>
                 <Inventory/>
                 <Footer />
             </div>
         )
+    }
 }
 export default Combat;

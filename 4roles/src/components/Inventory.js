@@ -2,6 +2,10 @@ import React from 'react';
 import Item from './Item';
 
 class Inventory extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    
     render() {
         return ( 
             <div className = "inventory" >

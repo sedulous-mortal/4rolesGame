@@ -5,16 +5,20 @@ import LiveFeed from './LiveFeed';
 import Inventory from './Inventory';
 import Footer from './Footer';
 
-const Farming = () => {
+class Farming extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render(){
     return ( 
         <div className="App">
                 <Header />
                 <Action imgURL={this.props.imgURL}/>
-                <LiveFeed actionType='farming'/>
+                <LiveFeed incrementer={this.props.incrementer} actionType='farming' events={this.props.events}/>
                 <Inventory />
                 <Footer />
             </div>
         )
-    
+    }
 }
 export default Farming;

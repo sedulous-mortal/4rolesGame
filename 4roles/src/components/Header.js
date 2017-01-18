@@ -2,6 +2,10 @@ import React from 'react';
 import {Link} from 'react-router';
 
 class Header extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    
     render() {
         return ( 
             <div className="header">
