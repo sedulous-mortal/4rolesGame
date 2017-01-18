@@ -7,17 +7,17 @@ class LiveFeed extends React.Component {
             interval: null,
         };
     }
+    
 //    componentDidMount() {
 //        // Start the interval
 //        const interval = setInterval(()=>{if (this.props.count <= this.props.events.length){
 //            //do the incrementer on the given counter
 //            console.log('tick');
 //            this.props.incrementer(this.props.countType);
-//        }}, 1000);
+//        }}, 5000);
+//        let currentFeedListText = document.getElementById(this.feedListText).innerHTML;
 //        this.setState({ interval });
-//        //check length of array only do if small enough num
-//        
-//        //end if
+//        //check length of array only do if small enough number
 //    }
     
     componentWillUnmount() {
@@ -28,7 +28,7 @@ class LiveFeed extends React.Component {
         const actionType = this.props.actionType;
         return ( 
             <div className = "liveFeed">
-                <h4>{this.props.events[this.props.count]}</h4>
+                <h4 id="feedListText">{this.props.events[this.props.count]}</h4>
             </div>
         );
     }

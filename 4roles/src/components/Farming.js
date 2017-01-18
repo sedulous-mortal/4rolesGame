@@ -14,7 +14,7 @@ class Farming extends React.Component {
         <div className="App">
                 <Header />
                 <Action imgURL={this.props.imgURL}/>
-                <LiveFeed incrementer={this.props.incrementer} actionType='farming' events={this.props.events}/>
+                <LiveFeed incrementer={this.props.incrementer} actionType='farming' count={this.props.count} events={this.props.events}/>
                 <Inventory />
                 <Footer />
             </div>
